@@ -4,25 +4,26 @@ package com.company;
 import java.util.*;
 
 public class Brands {
-
+    Scanner scan = new Scanner(System.in);
     private String id;
     private String brandName;
-    static TreeSet<Brands> brand = new TreeSet<>(new ComparatorBrandName());
-public Brands(){}
+    TreeSet<Brands> brand = new TreeSet<>(new ComparatorBrandName());
+
+    public Brands() {
+
+    }
 
     public Brands(String id, String brandName) {
         this.id = id;
         this.brandName = brandName;
+
     }
 
-    static {
-        addBrandName();
-    }
 
-    public static Brands controlBrand(String name) {
+    public Brands controlBrand(String name) {
 
         for (Brands b : brand) {
-            if (name.equals(b.getName())) return b;
+            if (name.equals(b.getBrandName())) return b;
         }
 
         Brands brandd = new Brands(UUID.randomUUID().toString(), name);
@@ -30,26 +31,78 @@ public Brands(){}
         return brandd;
     }
 
-    public static void addBrandName() {
+    public void addBrandName() {
 
-        brand.add(new Brands("UUID.randomUUID().toString()", "Samsung"));
-        brand.add(new Brands("123", "Lenovo"));
+        brand.add(new Brands(UUID.randomUUID().toString(), "Samsung"));
+        brand.add(new Brands(UUID.randomUUID().toString(), "Lenovo"));
         brand.add(new Brands(UUID.randomUUID().toString(), "Apple"));
-        brand.add(new Brands("1234", "Huawei"));
+        brand.add(new Brands(UUID.randomUUID().toString(), "Huawei"));
         brand.add(new Brands(UUID.randomUUID().toString(), "Casper"));
         brand.add(new Brands(UUID.randomUUID().toString(), "Asus"));
         brand.add(new Brands(UUID.randomUUID().toString(), "HP"));
-        brand.add(new Brands(UUID.randomUUID().toString(), "Xaomi"));
+        brand.add(new Brands(UUID.randomUUID().toString(), "Xiaomi"));
         brand.add(new Brands(UUID.randomUUID().toString(), "Monster"));
 
     }
 
     public void printBrand() {
+        int i = 1;
         for (Brands b : brand) {
-            System.out.println(b.getName());
+            System.out.println(i + ". Marka :" + b.getBrandName());
+            i++;
         }
 
     }
+
+    public String selectBrand() {
+
+        System.out.println("-------------");
+        System.out.println("Marka seçin :");
+        int tercih = scan.nextInt();
+        String selectBrand = "";
+        switch (tercih) {
+            case 1:
+                selectBrand = "Samsung";
+                return selectBrand;
+            case 2:
+                selectBrand = "Lenovo";
+                return selectBrand;
+
+            case 3:
+                selectBrand = "Apple";
+                return selectBrand;
+
+            case 4:
+                selectBrand = "Huawei";
+                return selectBrand;
+
+            case 5:
+                selectBrand = "Casper";
+                return selectBrand;
+
+            case 6:
+                selectBrand = "Asus";
+                return selectBrand;
+
+            case 7:
+                selectBrand = "HP";
+                return selectBrand;
+
+            case 8:
+                selectBrand = "Xiaomi";
+                return selectBrand;
+
+            case 9:
+                selectBrand = "Monster";
+                return selectBrand;
+
+            default:
+                System.out.println("Lütfen verilen değerler aralığında bir değer girin !");
+
+        }
+        return selectBrand;
+    }
+
 
     public String getId() {
         return id;
@@ -59,7 +112,7 @@ public Brands(){}
         this.id = id;
     }
 
-    public String getName() {
+    public String getBrandName() {
         return brandName;
     }
 
