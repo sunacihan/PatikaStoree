@@ -55,11 +55,12 @@ public class NoteBook extends Products {
                 System.out.println("Lütfen verilen değerler aralığında bir değer girin !");
 
         }
-//        menuNoteBook();
+     menuNoteBook(brands);
 
     }
 
     public void addNoteBookNew(Brands brands){
+
         brands.printBrand();
         String bName =  selectBrand();
 
@@ -82,6 +83,7 @@ public class NoteBook extends Products {
     }
 
     public void printNoteBookBrand() {
+
         System.out.println("--------------------------");
         System.out.println("*** NoteBook Markaları ***");
         for (NoteBook nb : noteBooksList

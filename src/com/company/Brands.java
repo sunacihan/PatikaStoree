@@ -62,38 +62,38 @@ public class Brands {
         String selectBrand = "";
         switch (tercih) {
             case 1:
-                selectBrand = "Samsung";
-                return selectBrand;
-            case 2:
-                selectBrand = "Lenovo";
-                return selectBrand;
-
-            case 3:
                 selectBrand = "Apple";
                 return selectBrand;
-
-            case 4:
-                selectBrand = "Huawei";
-                return selectBrand;
-
-            case 5:
-                selectBrand = "Casper";
-                return selectBrand;
-
-            case 6:
+            case 2:
                 selectBrand = "Asus";
                 return selectBrand;
 
-            case 7:
+            case 3:
+                selectBrand = "Casper";
+                return selectBrand;
+
+            case 4:
                 selectBrand = "HP";
                 return selectBrand;
 
+            case 5:
+                selectBrand = "Huawei";
+                return selectBrand;
+
+            case 6:
+                selectBrand = "Lenovo";
+                return selectBrand;
+
+            case 7:
+                selectBrand = "Monster";
+                return selectBrand;
+
             case 8:
-                selectBrand = "Xiaomi";
+                selectBrand = "Samsung";
                 return selectBrand;
 
             case 9:
-                selectBrand = "Monster";
+                selectBrand = "Xiaomi";
                 return selectBrand;
 
             default:

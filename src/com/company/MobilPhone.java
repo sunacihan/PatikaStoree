@@ -24,7 +24,7 @@ public class MobilPhone extends Products {
         mobilPhoneList.add(new MobilPhone(controlBrand("Huawei"), UUID.randomUUID().toString(), "Huawei", "Huawei Pat12", 8000, 1000, 5.6, 516, 32, 4000, "Mavi"));
     }
 
-    public void menuMobilPhone() {
+    public void menuMobilPhone(Brands brands) {
         addMobilPhone();
         System.out.println("----------------");
         System.out.println("Cep Telefon Menü");
@@ -46,7 +46,7 @@ public class MobilPhone extends Products {
                 printMobilPhone();
                 break;
             case 3:
-                addMobilPhoneNew();
+                addMobilPhoneNew(brands);
                 break;
             case 4:
                 System.out.print("Silmek istediğiniz ürün ismi :");
@@ -60,12 +60,12 @@ public class MobilPhone extends Products {
                 System.out.println("Lütfen verilen değerler aralığında bir değer girin !");
 
         }
-        menuMobilPhone();
+        menuMobilPhone(brands);
 
     }
 
-    public void addMobilPhoneNew() {
-
+    public void addMobilPhoneNew(Brands brands) {
+        brands.printBrand();
         String bName =  selectBrand();
 
         System.out.print("Ürün İsmi :");

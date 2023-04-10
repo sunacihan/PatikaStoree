@@ -1,8 +1,6 @@
 package com.company;
 
 import java.util.*;
-
-
 public class Main {
 
 
@@ -10,6 +8,7 @@ public class Main {
         Brands brand = new Brands();
         brand.addBrandName();
         Scanner scan = new Scanner(System.in);
+
         System.out.println("-------------------------------------");
         System.out.println("Patika Store Ürün Yönetim Paneli!");
         System.out.println("1 - Notebook İşlemleri");
@@ -26,7 +25,7 @@ public class Main {
                 break;
             case 2:
                 MobilPhone mp=new MobilPhone();
-                mp.menuMobilPhone();
+                mp.menuMobilPhone(brand);
 
                 break;
             case 3:
